@@ -1,0 +1,96 @@
+# RedstoneLimit Configuration
+
+# Default limits
+defaults:
+  redstone: 100
+  hoppers: 50
+
+# Player-specific limits
+# Format:
+# players:
+#   username:
+#     redstone: 200
+#     hoppers: 100
+players:
+# Example:
+# Rici_21:
+#   redstone: 200
+#   hoppers: 100
+
+# Messages (supports color codes with &)
+messages:
+  prefix: "&8[&cRedstoneLimit&8] &r"
+  limit-reached: "&cYou have reached your limit of {type} components ({limit})."
+  check-self: "&7You have placed &6{count}&7 out of &6{limit}&7 {type} components."
+  check-other: "&7Player &6{player}&7 has placed &6{count}&7 out of &6{limit}&7 {type} components."
+  reset-success: "&7Successfully reset &6{type}&7 count for player &6{player}&7."
+  reload-success: "&7Configuration reloaded successfully."
+  no-permission: "&cYou don't have permission to use this command."
+  player-not-found: "&cPlayer not found."
+
+# Use permissions for limits
+# If true, will check for permissions like:
+# - redstonelimit.redstone.X (where X is the limit)
+# - redstonelimit.hoppers.X (where X is the limit)
+use-permissions: true
+
+# Redstone components to track
+redstone-components:
+  - REDSTONE_WIRE
+  - REPEATER
+  - COMPARATOR
+  - REDSTONE_TORCH
+  - REDSTONE_WALL_TORCH
+  - PISTON
+  - STICKY_PISTON
+  - DISPENSER
+  - DROPPER
+  - OBSERVER
+  - TARGET
+  - DAYLIGHT_DETECTOR
+  - REDSTONE_LAMP
+  - NOTE_BLOCK
+  - TRAPPED_CHEST
+  - TRIPWIRE_HOOK
+  - LEVER
+  - STONE_BUTTON
+  - ACACIA_BUTTON
+  - BIRCH_BUTTON
+  - DARK_OAK_BUTTON
+  - JUNGLE_BUTTON
+  - OAK_BUTTON
+  - SPRUCE_BUTTON
+  - CRIMSON_BUTTON
+  - WARPED_BUTTON
+  - STONE_PRESSURE_PLATE
+  - ACACIA_PRESSURE_PLATE
+  - BIRCH_PRESSURE_PLATE
+  - DARK_OAK_PRESSURE_PLATE
+  - JUNGLE_PRESSURE_PLATE
+  - OAK_PRESSURE_PLATE
+  - SPRUCE_PRESSURE_PLATE
+  - CRIMSON_PRESSURE_PLATE
+  - WARPED_PRESSURE_PLATE
+  - LIGHT_WEIGHTED_PRESSURE_PLATE
+  - HEAVY_WEIGHTED_PRESSURE_PLATE
+
+# Whether to prevent piston pushing of redstone components
+prevent-piston-push: true
+
+# Whether to count connected hoppers as one chain
+prevent-hopper-chains: true
+
+# Debug mode (enables additional logging)
+debug: false
+
+# Storage type: YAML or MYSQL
+storage: YAML
+
+# MySQL settings (if storage is set to MYSQL)
+mysql:
+  host: localhost
+  port: 3306
+  database: redstonelimit
+  username: root
+  password: password
+  table-prefix: rl_
